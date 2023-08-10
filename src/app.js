@@ -1,9 +1,7 @@
 import React from "react";
 import Navbar from "./components/nav-bar";
 import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
-import NewArrival from "./components/pages/new";
-import Home from "./components/pages/home";
-import MenSection from "./components/pages/men";
+import { Home, MenSection, NewArrival } from "./components";
 const App = () => {
   return (
     <>

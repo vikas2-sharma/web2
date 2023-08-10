@@ -29,7 +29,7 @@ function Navbar(props) {
             <NavLink>
               <h3 className="header-link">Accessories</h3>
             </NavLink>
-            <div>
+            <div className="search-container">
               <input className="search-input" type="text" />
             </div>
           </div>
