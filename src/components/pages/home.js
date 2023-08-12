@@ -1,3 +1,8 @@
+import {
+  faChevronLeft,
+  faChevronRight,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -22,7 +27,7 @@ function Home(props) {
     // }, 3000);
   }, []);
   const pURL = imageList[imageIndex];
-  console.log(pURL);
+  // console.log(pURL);
 
   return (
     <>
@@ -36,7 +41,7 @@ function Home(props) {
                 }}
                 onClick={preImage}
               >
-                Prev
+                <FontAwesomeIcon icon={faChevronLeft} />
               </div>
               <div
                 style={{
@@ -44,7 +49,7 @@ function Home(props) {
                 }}
                 onClick={nextImage}
               >
-                Next
+                <FontAwesomeIcon icon={faChevronRight} />
               </div>
             </div>
             {/* <div className="banner-button"></div> */}

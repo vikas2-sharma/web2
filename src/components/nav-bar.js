@@ -1,10 +1,28 @@
-import React from "react";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { faCartShopping, faSearch } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import React, { useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
+import LoginWindow from "./components/login-window";
 
 function Navbar(props) {
   const navigate = useNavigate();
+  const [showLogin, setShowLogin] = useState(true);
+  const onLoginClick = () => {
+    console.log("profile clicked");
+    setShowLogin(true);
+    // return <LoginWindow />;
+  };
   return (
     <React.Fragment>
+      {showLogin ? (
+        <LoginWindow
+          visible={showLogin}
+          onClickCancel={() => {
+            setShowLogin(false);
+          }}
+        />
+      ) : undefined}
       <header>
         <div className="nav-container">
           <div
@@ -31,10 +49,23 @@ function Navbar(props) {
             </NavLink>
             <div className="search-container">
               <input className="search-input" type="text" />
+              <div className="search-icon">
+                <FontAwesomeIcon icon={faSearch} />
+              </div>
             </div>
           </div>
-          <div>
-            <img className="profile" src={require("../images/sample.png")} />
+          <div className="nav-profile-container">
+            <div style={{ margin: "0px 10px" }}>
+              <FontAwesomeIcon icon={faCartShopping} />
+            </div>
+            {/* <div style={{ margin: "0px 10px" }}>
+              <FontAwesomeIcon icon={faUser} />
+            </div> */}
+            <img
+              onClick={onLoginClick}
+              className="profile"
+              src={require("../images/sample.png")}
+            />
           </div>
         </div>
       </header>

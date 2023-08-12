@@ -1,8 +1,7 @@
-import _Home from "./pages/home";
-import _MenSection from "./pages/men";
-import _NewArrival from "./pages/new";
+import Home from "./pages/home";
+import MenSection from "./pages/men";
+import NewArrival from "./pages/new";
 
-const Home = _Home;
-const MenSection = _MenSection;
-const NewArrival = _NewArrival;
+
+
 export { Home, MenSection, NewArrival };
