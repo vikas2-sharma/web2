@@ -5,6 +5,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import MenSection from "./men";
 
 function Home(props) {
   const imageList = [
@@ -57,6 +58,9 @@ function Home(props) {
               className="product-banner"
               src={imageList[imageIndex].productURL}
             />
+          </div>
+          <div>
+            <MenSection />
           </div>
         </div>
       </div>
