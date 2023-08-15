@@ -4,10 +4,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import LoginWindow from "./components/login-window";
+import { CSSTransition } from "react-transition-group";
 
 function Navbar(props) {
   const navigate = useNavigate();
-  const [showLogin, setShowLogin] = useState(true);
+  const [showLogin, setShowLogin] = useState(false);
   const onLoginClick = () => {
     console.log("profile clicked");
     setShowLogin(true);
@@ -15,14 +16,17 @@ function Navbar(props) {
   };
   return (
     <React.Fragment>
-      {showLogin ? (
-        <LoginWindow
-          visible={showLogin}
-          onClickCancel={() => {
-            setShowLogin(false);
-          }}
-        />
-      ) : undefined}
+      <CSSTransition in={showLogin} classNames={"login"} timeout={600}>
+        <div class="login-animate">
+          <LoginWindow
+            visible={showLogin}
+            onClickCancel={() => {
+              setShowLogin(false);
+            }}
+          />
+        </div>
+      </CSSTransition>
+
       <header>
         <div className="nav-container">
           <div

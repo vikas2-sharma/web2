@@ -1,6 +1,7 @@
 * {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin: 0px;
+  /* border: 1px dotted red; */
 }
 h1 {
   color: rgb(83, 83, 0);
@@ -122,12 +123,11 @@ header .profile {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: 1s;
 }
 .popup-window {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: fit-content;
   min-width: 300px;
   height: fit-content;
   background-color: white;
@@ -142,7 +142,7 @@ header .profile {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 60%;
+  width: 100%;
 }
 
 .login-form button {
@@ -159,4 +159,58 @@ header .profile {
   background: #09213e;
 
   color: white;
+}
+.login-options {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition: 0.3s;
+  border: 2px solid #154989;
+  margin: 0px 0px 30px 0px;
+  border-radius: 30px;
+}
+.login-options h3 {
+  padding: 5px 10px;
+  transition: 300ms;
+  font-weight: lighter;
+}
+.login-options h3:first-child {
+  background-color: #ffffff;
+  border-radius: 30px 0px 0px 30px;
+}
+.login-options h3:last-child {
+  background-color: #ffffff;
+  border-radius: 0px 30px 30px 0px;
+}
+.login-options .active {
+  background-color: #154989 !important;
+  color: white;
+  font-weight: bold;
+}
+.login-animate {
+  display: none;
+  transition: 0.6s;
+}
+.login-enter {
+  display: block;
+  opacity: 0;
+}
+.login-enter-active {
+  opacity: 1;
+}
+.login-enter-done {
+  opacity: 1;
+  display: block;
+}
+.login-exit-done {
+  display: none;
+  opacity: 0;
+}
+.login-exit-active {
+  opacity: 1;
+  display: block;
+}
+.login-exit {
+  opacity: 0;
+  display: block;
 }

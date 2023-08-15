@@ -1,8 +1,18 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import "./input.css";
-function Input({ placeHolder, type, value, onChange }) {
+function Input({ placeHolder, type, value, onChange = () => {}, autoFocus }) {
   const labelRef = useRef(null);
   const inputRef = useRef(null);
+  const onInputChange = (e) => {
+    const value = e.target.value;
+    onChange(value);
+  };
+  useEffect(() => {
+    if (autoFocus) {
+      // labelRef.current.classList.add("input-label-focus");
+      inputRef.current.focus();
+    }
+  }, []);
   return (
     <div className="custom-input">
       <p
@@ -29,6 +39,7 @@ function Input({ placeHolder, type, value, onChange }) {
             labelRef.current.classList.remove("input-label-focus");
         }}
         value={value}
+        onChange={onInputChange}
       />
     </div>
   );
