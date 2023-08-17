@@ -32,7 +32,7 @@ const App = () => {
         {/* <LoginWindow /> */}
         {/* <h1>Hello React</h1> */}
         <Routes>
-          <Route path="/" element={<MenSection />} />
+          <Route path="/" element={<Home />} />
           <Route path="/new" element={<NewArrival />} />
           <Route path="/men" element={<MenSection />} />
         </Routes>

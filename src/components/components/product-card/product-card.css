@@ -12,11 +12,21 @@
   align-items: center;
   justify-content: center;
 }
+.card-cursor {
+  cursor: pointer;
+  transition: 0.3s;
+}
+.card-cursor:hover {
+  filter: drop-shadow(3px 3px 5px #aaaaaa66);
+  transform: scale(101%);
+}
+.card-cursor:hover .card-label {
+  background-color: #d1d1d1;
+}
 .card-image {
   width: var(--card-width);
   overflow: hidden;
   height: var(--card-width);
-  background-color: red;
   border-radius: var(--card-border-radius) var(--card-border-radius) 0 0;
 }
 .card-image img {
@@ -24,6 +34,7 @@
   overflow: hidden;
   object-fit: cover;
   width: 100%;
+  transition: all 0.5s;
 }
 .card-label {
   width: var(--card-width);
@@ -32,7 +43,7 @@
   border-radius: 0 0 var(--card-border-radius) var(--card-border-radius);
 }
 .card-label * {
-  margin: 8px;
+  padding: 8px;
 }
 .card-title > p {
   font-size: 12px;
