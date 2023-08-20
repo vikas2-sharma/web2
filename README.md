@@ -2,4 +2,4 @@
 
 **E commerce website build on react js**
 
-[Live Demo](https://vastralaya-web.netlify.app/)
+[Live Demo](https://vastralaya-web.netlify.app/) (Best View on Desktop)
