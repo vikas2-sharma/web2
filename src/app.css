@@ -223,3 +223,112 @@ header .profile {
   flex-wrap: wrap;
   align-items: flex-start;
 }
+
+/*** Product Page */
+
+.product-page {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 1rem;
+  background-color: #fbfeff;
+}
+.product-page img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+.product-image {
+  width: 50%;
+  margin: 1rem;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.product-page .details {
+  margin: 1rem;
+}
+.product-page .name {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.product-page .name * {
+  margin: 0rem 0rem 1rem 0rem;
+}
+.product-page .name h4 {
+  font-size: 2rem;
+}
+
+.product-page .buttons {
+  display: flex;
+  flex-direction: row;
+}
+.product-page .buttons svg {
+  margin: 0.5rem;
+  padding: 0px;
+  flex: 0;
+  transform: scale(110%);
+}
+.product-page .buttons > div {
+  margin: 1rem 0.3rem;
+  background-color: crimson;
+  border: 1px solid crimson;
+  padding: 0.5rem 1rem;
+  color: white;
+  border-radius: 5px;
+  flex: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.product-page .buttons > div:hover {
+  background-color: #9a0e3f;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+
+.product-page .buttons .selected {
+  color: crimson;
+
+  background-color: white;
+  border: 1px solid grey;
+}
+.product-page .buttons .selected:hover {
+  background-color: #f7f7f7;
+}
+.product-page .buttons .selected svg {
+  animation-name: example;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: backwards;
+}
+@keyframes example {
+  0% {
+    opacity: 1;
+    transform: scale(100%);
+    left: 0px;
+    top: 0px;
+  }
+  30% {
+    opacity: 0.5;
+    transform: scale(130%);
+    left: 0px;
+    top: -40px;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(100%);
+    left: 0px;
+    top: -50px;
+  }
+}
+
+.product-page .buttons div:first-child {
+  flex: 1;
+}

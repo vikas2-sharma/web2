@@ -9,9 +9,9 @@ import MenSection from "./men";
 
 function Home(props) {
   const imageList = [
-    { productURL: require("../../images/shirt.jpg"), productName: "Shirt" },
-    { productURL: require("../../images/hoodie.jpg"), productName: "Hoodie" },
-    { productURL: require("../../images/shirts.jpg"), productName: "Shirt" },
+    { productURL: "../../images/shirt.jpg", productName: "Shirt" },
+    { productURL: "../../images/hoodie.jpg", productName: "Hoodie" },
+    { productURL: "../../images/shirts.jpg", productName: "Shirt" },
   ];
   const navigate = useNavigate();
   const [imageIndex, setImageIndex] = useState(0);

@@ -68,7 +68,7 @@ function Navbar(props) {
             <img
               onClick={onLoginClick}
               className="profile"
-              src={require("../images/sample.png")}
+              src={"../images/sample.png"}
             />
           </div>
         </div>

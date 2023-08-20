@@ -1,31 +1,6 @@
-import React from "react";
-import ProductCard from "../components/product-card/product-card";
-
-function MenSection(props) {
-  return (
-    <>
-      <div>
-        <h1>Men</h1>
-        <div class="products-container">
-          {products.map((product) => (
-            <ProductCard
-              title={product.name}
-              image={product.imageId}
-              price={product.price}
-              id={product.id}
-              onClick={() => {
-                console.log(product);
-              }}
-            />
-          ))}
-        </div>
-      </div>
-    </>
-  );
-}
-
-export default MenSection;
-
+export const getProductDetails = (productId) => {
+  return products.find((ele) => ele.id === parseInt(productId));
+};
 const products = [
   {
     id: 1,

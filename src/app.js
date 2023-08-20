@@ -6,7 +6,10 @@ import LoginWindow from "./components/components/login-window";
 import Input from "./components/components/blocks/input";
 import "./sample.css";
 import { CSSTransition } from "react-transition-group";
+import Product from "./components/pages/product";
+import { getProductDetails } from "./misc/db";
 const App = () => {
+  console.log("test:", getProductDetails(12));
   // const [isEnter, setIsEnter] = useState(false);
   // return (
   //   <div class="container" onClick={(e) => console.log(e.target)}>
@@ -35,6 +38,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/new" element={<NewArrival />} />
           <Route path="/men" element={<MenSection />} />
+          <Route path="/product/:id" element={<Product />} />
         </Routes>
       </BrowserRouter>
     </>
