@@ -10,6 +10,7 @@
 2.  Men tab
 3.  Product Page
 4.  Login and Sign Up window
+5.  Wishlist count updates on clicking "Wishlist" button in product detail page.
 
 **Functionality Pending**
 
