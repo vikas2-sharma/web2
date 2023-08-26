@@ -9,6 +9,7 @@ function MenSection(props) {
         <div class="products-container">
           {products.map((product) => (
             <ProductCard
+              key={product.id}
               title={product.name}
               image={product.imageId}
               price={product.price}

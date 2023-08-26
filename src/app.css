@@ -38,6 +38,7 @@ header .profile {
 .header-options > * {
   text-decoration: none;
 }
+
 .header-link {
   color: black;
   transition: 0.2s;
@@ -55,12 +56,33 @@ header .profile {
 
 .search-container {
   margin: 0 0 0 20px;
+  position: relative;
 }
 .search-icon {
-  position: relative;
-  display: inline;
-  right: 35px;
+  position: absolute;
+  right: 15px;
+  top: 45%;
+  transform: translate(0, -50%);
   cursor: pointer;
+}
+
+.wishlist {
+  position: relative;
+}
+.wishlist .count {
+  position: absolute;
+  bottom: -20px;
+  right: -11px;
+  background-color: crimson;
+  color: white;
+  padding: 2px;
+  font-size: 0.7rem;
+  /* display: none; */
+  border-radius: 10px;
+  margin: 0px;
+  min-width: 13px;
+  min-height: 13px;
+  text-align: center;
 }
 .nav-profile-container {
   display: flex;

@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useState } from "react";
+import React, { Suspense, useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getProductDetails } from "../../misc/db";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,21 +7,32 @@ import {
   faCartShopping,
   faHeart as faHeartSolid,
 } from "@fortawesome/free-solid-svg-icons";
+import { WishListContext } from "../../misc/reducer/provider";
 
 function Product(props) {
   const params = useParams();
+  const { state, addToCart, removeFromCart } = useContext(WishListContext);
   const { id } = params;
+  const product = getProductDetails(id);
+  const [wishSelected, setWishSelected] = useState("");
 
-  const [product, setProduct] = useState(getProductDetails(id));
+  const onWishClick = () => {
+    setWishSelected(wishSelected === "" ? "selected" : "");
+    if (wishSelected === "") {
+      addToCart(id);
+    } else {
+      removeFromCart(id);
+    }
+  };
+
   useEffect(() => {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
+    const { wishList } = state;
+    if (wishList.indexOf(id) != -1) {
+      setWishSelected(wishSelected === "" ? "selected" : "");
+    }
   }, []);
-
-  const [wishSelected, setWishSelected] = useState("");
-  const onWishClick = () => {
-    setWishSelected(wishSelected === "" ? "selected" : "");
-  };
 
   return (
     <div className="product-page">
